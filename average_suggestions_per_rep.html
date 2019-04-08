@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawAxisTickColors);
+
+function drawAxisTickColors() {
+      var data = google.visualization.arrayToDataTable([
+        ['Model', 'RA Config Simulation', 'Current Config'],
+        ['', 8, 5]
+      ]);
+
+      var options = {
+
+        chartArea: {width: '100%'},
+        colors: ['#e65100', '#ff9e16'],
+                   animation: {
+            duration: 500,
+            easing: 'linear',
+            startup: true
+          },
+        hAxis: {
+          title: 'Average Suggestions / Rep',
+          minValue: 0,
+			maxValue: 10,
+          textStyle: {
+            bold: true,
+            fontSize: 10,
+            color: '#4d4d4d'
+          },
+          titleTextStyle: {
+            bold: true,
+            fontSize: 12,
+            color: '#4d4d4d'
+          }
+        },
+        vAxis: {
+          textStyle: {
+            fontSize: 14,
+            bold: true,
+            color: '#848484'
+          },
+          titleTextStyle: {
+            fontSize: 14,
+            bold: true,
+            color: '#848484'
+          }
+        }
+      };
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 300px; height: 200px;"></div>
+  </body>
+</html>
