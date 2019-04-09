@@ -12,9 +12,8 @@ function drawChart() {
 
   var data = google.visualization.arrayToDataTable([
     ['Response', 'Number'],
-    ['Accept', 250],
-    ['Reject', 126],
-    ['Ignore', 38]
+    ['Accept', 270],
+    ['Reject', 120]
   ]);
 
   var options = {
@@ -27,13 +26,10 @@ function drawChart() {
     },
     slices: {
       0: {
-        color: '#5EB4FF'
+        color: '#005B84'
       },
       1: {
-        color: '#F00D00'
-      },
-      2: {
-        color: '#D8D8D8'
+        color: '#CDCDCD'
       }
     }
 
