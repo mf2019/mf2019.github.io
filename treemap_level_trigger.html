@@ -1,0 +1,87 @@
+<html>
+
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+
+    google.charts.load('current', {'packages':['treemap']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'ID');
+data.addColumn('string', 'Parent');
+data.addColumn('number', 'Number Of Lines');
+data.addRows([
+  ['Lever',null,0],
+['Call','Lever',null],
+['Email','Lever',null],
+['Insight','Lever',null],
+['Content','Lever',null],
+
+['Claims','Call',20],
+['Sales','Call',70],
+['HCP Engagement','Call',120],
+
+
+['Claims ','Email',15],
+['Sales ','Email',40],
+['HCP Engagement ','Email',50],
+
+['Claims  ','Insight',10],
+['Sales  ','Insight',50],
+['HCP Engagement  ','Insight',70],
+
+
+
+['Claims    ','Content',5],
+['Sales    ','Content',15],
+['HCP Engagement    ','Content',30]
+
+
+
+
+
+
+]);
+
+var tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+
+var options = {
+  highlightOnMouseOver: true,
+  maxDepth: 1,
+  maxPostDepth: 2,
+  minHighlightColor: '#8c6bb1',
+  midHighlightColor: '#9ebcda',
+  maxHighlightColor: '#edf8fb',
+  minColor:  '#D7D8D7' ,
+  midColor: '#5AC8FA',
+  maxColor: '#005B84',
+  headerHeight: 15,
+  showScale: true,
+  height: 500,
+  fontColor : 'white',
+  fontSize: 20,
+  useWeightedAverageForAggregation: true,
+  generateTooltip: showFullTooltip
+};
+
+  tree.draw(data, options);
+
+
+function showFullTooltip(row, size, value) {
+return '<div style="background:#F3F2F2; padding:10px; border-style:solid">' +
+     data.getValue(row, 0)+ ':' + size  + ' </div>';
+}
+
+
+}
+</script>
+
+</head>
+
+<body>
+
+       <div id="chart_div" style="width: 600px; height: 300px;"></div>
+     </body>
+     </html>
