@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title></title>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+
+
+    window.onload=function(){
+      
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawStacked);
+
+function drawStacked() {
+      var data = google.visualization.arrayToDataTable([
+        ['Trigger', 'Accpted', 'Rejected','Ignored'],
+        ['Unaware', 80, 20, 10],
+        ['Aware', 300, 200, 50],
+        ['Explore', 200, 150, 50],
+		['Active', 200, 150, 50],
+		['Advocate', 200, 150, 50]
+        
+        
+      ]);
+
+      var options = {
+      
+                 animation: {
+            duration: 500,
+            easing: 'linear',
+            startup: true
+          },
+      
+          series: {
+    0:{color:'#5EB4FF', opacity: 0.1 },
+    1:{color:'#F00D00', opacity: 0.1 },
+    2:{color:'#D8D8D8', opacity: 0.2 }
+  },
+        chartArea: {width: '70%',
+        top : 10
+        
+        
+        },
+        isStacked: true,
+        hAxis: {
+          title: 'Stage',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'Suggestions'
+        }
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    }
+
+</script>
+
+</head>
+<body>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <div id="chart_div" style="width: 1200px; height: 350px;" ></div>
+      
+
+
+</body>
+</html>
