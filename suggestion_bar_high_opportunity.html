@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Highcharts Demo</title>
+
+
+
+  
+</head>
+<body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+
+<div id="container" style="width: 650px; height: 300px; margin: 0"></div>
+
+
+
+
+  <script type="text/javascript">
+
+
+    
+Highcharts.chart('container', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: ['Current', 'RA Claim Config']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Suggestions'
+        }
+    },
+    legend: {
+        reversed: true
+    },
+    plotOptions: {
+        series: {
+            stacking: 'normal'
+        }
+    },
+    series: [
+    
+	{
+        name: 'Other',
+        data: [8, 4]
+    },
+    {
+        name: 'Census',
+        data: [4, 3]
+    },
+    {
+        name: 'HCP Engagement',
+        data: [48, 30]
+    },
+    
+    {
+        name: 'Claims',
+        data: [12, 25]
+    }, {
+        name: 'Sales',
+        data: [46, 45]
+    }
+    
+    ]
+});
+
+
+</script>
+
+  
+</body>
+</html>
