@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Highcharts Demo</title>
+
+  
+</head>
+<body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+<div id="container" style="width: 650px; height: 300px; margin: 0 "></div>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+
+
+    
+Highcharts.chart('container', {
+  chart: {
+    type: 'bar',
+  },
+  title: {
+    /*text: 'Suggestions by Segment' */
+    text:''
+  },
+
+  colors: ['#5AC8FA', '#005B84', '#8bbc21', '#910000', '#1aadce',
+    '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'
+  ],
+
+
+  xAxis: {
+  title: {
+      text: 'Segment'
+    },
+  
+    categories: [
+      'High Opportunity',
+      'Verteo Loyalist',
+      'Competitor Loyalist',
+      'Low Opportunity'
+    ],
+    crosshair: true
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: 'Suggestions'
+    }
+  },
+  tooltip: {
+    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+      '<td style="padding:0"><b>{point.y:.0f} </b></td></tr>',
+    footerFormat: '</table>',
+    shared: true,
+    useHTML: true
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0
+    }
+  },
+  series: [{
+      name: 'Current Configuration',
+      data: [50, 30, 45, 45]
+    },
+
+    {
+      name: 'RA Claim Config Simulation',
+      data: [65, 35, 50, 35]
+
+    }
+
+
+  ]
+});
+
+
+
+</script>
+
+</body>
+</html>
