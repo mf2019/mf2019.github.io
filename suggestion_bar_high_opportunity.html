@@ -7,7 +7,7 @@
 
 
 
-  
+
 </head>
 <body>
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -21,11 +21,14 @@
   <script type="text/javascript">
 
 
-    
+
 Highcharts.chart('container', {
     chart: {
         type: 'bar'
     },
+
+ colors: ['#00A0E3', '#14315D', '#71DEDA', '#00A69F', '#E3CF78', '#E8A000', '#C4382F'], 
+
     title: {
         text: ''
     },
@@ -47,7 +50,7 @@ Highcharts.chart('container', {
         }
     },
     series: [
-    
+
 	{
         name: 'Other',
         data: [8, 4]
@@ -60,7 +63,7 @@ Highcharts.chart('container', {
         name: 'HCP Engagement',
         data: [48, 30]
     },
-    
+
     {
         name: 'Claims',
         data: [12, 25]
@@ -68,13 +71,13 @@ Highcharts.chart('container', {
         name: 'Sales',
         data: [46, 45]
     }
-    
+
     ]
 });
 
 
 </script>
 
-  
+
 </body>
 </html>
