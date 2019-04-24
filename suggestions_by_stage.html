@@ -18,7 +18,7 @@ google.charts.setOnLoadCallback(drawStacked);
 
 function drawStacked() {
       var data = google.visualization.arrayToDataTable([
-        ['Trigger', 'Accpted', 'Rejected','Ignored'],
+        ['Trigger', 'Actioned', 'Dismissed','Ignored'],
         ['Unaware', 80, 20, 10],
         ['Aware', 300, 200, 50],
         ['Explore', 200, 150, 50],
@@ -37,9 +37,9 @@ function drawStacked() {
           },
       
           series: {
-    0:{color:'#4BC981', opacity: 0.1 },
-    1:{color:'#C23934', opacity: 0.1 },
-    2:{color:'#919191', opacity: 0.2 }
+    0:{color:'#C4DC00', opacity: 0.1 },
+    1:{color:'#E32750', opacity: 0.1 },
+    2:{color:'#d7d7d7', opacity: 0.2 }
   },
         chartArea: {width: '70%',
         top : 10
