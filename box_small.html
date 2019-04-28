@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Highcharts Demo</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!-- random comment -->
+  
+</head>
+<body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+
+<div id="container" style="height: 400px;  width: 850px"></div>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+
+
+    
+Highcharts.chart('container', {
+
+  chart: {
+    type: 'boxplot',
+    inverted: true
+
+  },
+
+
+
+  title: {
+    text: ''
+  },
+
+  legend: {
+    enabled: false
+  },
+
+  xAxis: {
+    categories: ['Current', 'Simulation'],
+    /*
+    title: {
+      text: 'Configuration'
+    }
+    */
+  },
+
+  yAxis: {
+    title: {
+      text: 'Suggestions / Rep'
+    }
+  },
+  plotOptions: {
+    boxplot: {
+      fillColor: '#FFFFFF',
+
+      medianWidth: 3,
+                  animation: {
+                duration: 1500
+            }
+    }
+  },
+
+  series: [{
+    name: 'Suggestions',
+
+    data: [
+      [1, 3, 5, 7, 10],
+      [1, 4, 7, 9, 10]
+    ],
+    tooltip: {
+      headerFormat: '<em>Configuration: {point.key}</em><br/>'
+    }
+  }]
+
+});
+
+
+
+</script>
+
+
+</body>
+</html>
